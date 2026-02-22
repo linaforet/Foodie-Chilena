@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-chile-red: #D52B1E;
+  --color-chile-blue: #0039A6;
+  --color-mustard: #E1AD01;
+}
+
+body {
+  @apply bg-stone-50 text-stone-900 font-sans;
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.05)];
+}
+
+.recipe-card {
+  @apply bg-white rounded-[2rem] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-stone-100 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1;
+}
+
+.btn-primary {
+  @apply bg-mustard text-white px-8 py-4 rounded-2xl font-bold tracking-tight transition-all active:scale-95 hover:bg-amber-500 hover:shadow-lg hover:shadow-mustard/20 disabled:opacity-50 flex items-center gap-3;
+}
+
+.btn-secondary {
+  @apply bg-stone-900 text-white px-8 py-4 rounded-2xl font-bold tracking-tight transition-all active:scale-95 hover:bg-stone-800 hover:shadow-lg flex items-center gap-3;
+}
+
+.tab-button {
+  @apply px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-stone-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-stone-300 rounded-full hover:bg-stone-400;
+}
+
+@media print {
+  header, nav, footer, .btn-primary, .btn-secondary, button, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+  .recipe-card {
+    box-shadow: none;
+    border: none;
+  }
+  main {
+    padding: 0;
+    max-width: 100%;
+  }
+}

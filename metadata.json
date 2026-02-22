@@ -1,0 +1,7 @@
+{
+  "name": "Foodie Chilena",
+  "description": "Tu experto culinario chileno: ingeniería inversa de recetas, maridaje y planificación semanal.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
